@@ -1,17 +1,18 @@
+// import { useContext } from "react";
 import "./App.css";
-import TodoList from "./components/TodoList";
-import TwowayBinding from "./components/TwowayBinding";
-import UseEffect from "./components/UseEffect";
-import UseStateF8 from "./components/UseStateF8";
+// import ReactContext from "./components/Context";
+// import { ThemeContext } from "./components/ThemeProvider";
+import TodoWithContext from "./components/TodoWithContext";
 
 function App() {
+  // const context = useContext(ThemeContext);
+
   return (
     <div className="App">
       Ticktok clone
-      <UseStateF8 />
-      <TwowayBinding />
-      <TodoList />
-      <UseEffect />
+      {/* <button onClick={context.handleToggleTheme}>Toggle theme</button>
+      <ReactContext /> */}
+      <TodoWithContext />
     </div>
   );
 }
