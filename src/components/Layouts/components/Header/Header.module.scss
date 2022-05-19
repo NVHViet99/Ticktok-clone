@@ -22,10 +22,14 @@
 .logo {
 }
 
+.search,
+.search-result {
+  width: 361px;
+}
+
 .search {
   position: relative;
   display: flex;
-  width: 361px;
   height: 46px;
   background: rgba(22, 24, 35, 0.06);
   border-radius: var(--search-border-radius);
@@ -89,4 +93,13 @@
   &:active {
     background: rgba(22, 24, 35, 0.06);
   }
+}
+
+.label {
+  height: 30px;
+  padding: 5px 12px;
+  font-size: 1.4rem;
+  line-height: 20px;
+  font-weight: 600;
+  color: rgba(22, 24, 35, 0.5);
 }
