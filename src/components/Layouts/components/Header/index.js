@@ -23,7 +23,22 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
-  { icon: <FontAwesomeIcon className={cx('icon')} icon={faEarthAsia} />, title: 'English' },
+  {
+    icon: <FontAwesomeIcon className={cx('icon')} icon={faEarthAsia} />,
+    title: 'English',
+    children: {
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'VietNamese',
+        },
+      ],
+    },
+  },
   {
     icon: <FontAwesomeIcon className={cx('icon')} icon={faQuestionCircle} />,
     title: 'Feedback and help',
@@ -40,6 +55,10 @@ function Header() {
       setSearchResults([]);
     }, 2000);
   }, []);
+
+  const handleMenuChange = (item) => {
+    console.log(item);
+  };
 
   return (
     <header className={cx('wrapper')}>
@@ -81,7 +100,7 @@ function Header() {
           </Button>
           <Button primary>Log in</Button>
 
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onchange={handleMenuChange}>
             <button className={cx('btn-more')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>

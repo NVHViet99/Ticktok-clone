@@ -4,10 +4,10 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ data }) {
+function MenuItem({ data, onClick, onChange }) {
   return (
     <div className={cx('wrapper-item')}>
-      <Button className={cx('menu-item')} leftIcon={data.icon} to={data.to}>
+      <Button className={cx('menu-item')} leftIcon={data.icon} to={data.to} onClick={onClick}>
         {data.title}
       </Button>
     </div>
