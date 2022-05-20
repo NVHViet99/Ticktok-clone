@@ -1,0 +1,27 @@
+.menu-list {
+  width: 224px;
+
+  .menu-item {
+    margin-left: 0;
+  }
+}
+
+// menu item
+.wrapper-item {
+  padding-bottom: 8px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 0;
+  padding: 10px 16px;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}

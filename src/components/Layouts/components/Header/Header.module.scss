@@ -19,9 +19,6 @@
   height: 100%;
 }
 
-.logo {
-}
-
 .search,
 .search-result {
   width: 361px;
@@ -74,9 +71,6 @@
   color: rgba(22, 24, 35, 0.34);
 }
 
-.loading {
-}
-
 .search-btn {
   width: var(--search-button-width);
   height: 100%;
@@ -106,4 +100,16 @@
 
 .custom-login {
   color: rgba(22, 24, 35, 0.75);
+}
+
+.btn-more {
+  font-size: 2rem;
+  margin-left: 28px;
+  padding: 4px 8px;
+  background-color: transparent;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
