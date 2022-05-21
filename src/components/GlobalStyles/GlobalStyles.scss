@@ -39,3 +39,22 @@ button,
 a[href] {
   color: var(--text);
 }
+
+// custome tippy tooltip
+body {
+  .tippy-box {
+    border-radius: 8px;
+    background-color: rgba(84, 84, 84, 0.92);
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 2px;
+  }
+
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+    top: -1px;
+  }
+}
