@@ -122,6 +122,11 @@
 }
 
 //Actions
+.current-user {
+  display: flex;
+  align-items: center;
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -131,8 +136,9 @@
   background-color: transparent;
   font-size: 2.4rem;
   color: #161823;
-  padding: 4px 12px;
+  padding: 0px 12px;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 .user-avatar {

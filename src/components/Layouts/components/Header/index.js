@@ -1,13 +1,11 @@
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import {
   faCircleXmark,
-  faCloudUpload,
   faCog,
   faEarthAsia,
   faEllipsisVertical,
   faKeyboard,
   faMagnifyingGlass,
-  faMessage,
   faPlus,
   faQuestionCircle,
   faSignOut,
@@ -23,6 +21,8 @@ import 'tippy.js/dist/tippy.css'; //
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Images';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import Menu from '../../Popper/Menu';
 import styles from './Header.module.scss';
@@ -133,12 +133,17 @@ function Header() {
               <>
                 <Tippy delay={[0, 50]} content="Upload video">
                   <button className={cx('action-btn')}>
-                    <FontAwesomeIcon icon={faCloudUpload} />
+                    <UploadIcon />
                   </button>
                 </Tippy>
-                <Tippy delay={[0, 50]} content="Messages">
+                <Tippy delay={[0, 50]} content="Message">
                   <button className={cx('action-btn')}>
-                    <FontAwesomeIcon icon={faMessage} />
+                    <MessageIcon />
+                  </button>
+                </Tippy>
+                <Tippy delay={[0, 50]} content="Inbox">
+                  <button className={cx('action-btn')}>
+                    <InboxIcon />
                   </button>
                 </Tippy>
               </>
@@ -154,10 +159,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onchange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9552a57e0b326fabe47bf018cd48b10d~c5_100x100.jpeg?x-expires=1653271200&x-signature=pL9Vu3ie2UAKOdY6XzNNpZHq29Y%3D"
                 alt="Nguyen Van A"
+                fallback="https://s2.coinmarketcap.com/static/img/coins/64x64/2099.png"
               />
             ) : (
               <button className={cx('btn-more')}>
