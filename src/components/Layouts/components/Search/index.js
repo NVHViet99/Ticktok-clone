@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; //
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
+import useDebouce from '~/hooks/useDebouce';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import styles from './Search.module.scss';
 
@@ -17,6 +18,8 @@ function Search() {
 
   const [showResults, setShowsResults] = useState(true);
   const [showLoading, setShowsLoading] = useState(false);
+
+  const debouced = useDebouce(searchValue, 500);
 
   const handleHideResults = () => {
     setShowsResults(false);
@@ -33,13 +36,13 @@ function Search() {
   useEffect(() => {
     (async () => {
       try {
-        if (!searchValue.trim()) {
+        if (!debouced.trim()) {
           setSearchResults([]);
           return;
         }
         setShowsLoading(true);
         const response = await fetch(
-          `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`,
+          `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouced)}&type=less`,
         );
         const { data } = await response.json();
         setSearchResults(data);
@@ -50,7 +53,7 @@ function Search() {
         setShowsLoading(false);
       }
     })();
-  }, [searchValue]);
+  }, [debouced]);
 
   return (
     <HeadlessTippy
