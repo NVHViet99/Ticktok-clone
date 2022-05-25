@@ -53,11 +53,12 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--white);
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--primary);
 }
 
 .user-avatar {
+  cursor: pointer;
   width: 32px;
   height: 32px;
   margin-left: 12px;
@@ -71,4 +72,8 @@
   padding: 4px 8px;
   background-color: transparent;
   cursor: pointer;
+}
+
+.logo-link {
+  display: flex;
 }
