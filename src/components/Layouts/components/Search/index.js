@@ -9,7 +9,7 @@ import { SearchIcon } from '~/components/Icons';
 import useDebouce from '~/hooks/useDebouce';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import styles from './Search.module.scss';
-
+import * as searchService from '~/api/searchServices';
 const cx = classNames.bind(styles);
 
 function Search() {
@@ -34,25 +34,20 @@ function Search() {
   };
 
   useEffect(() => {
-    (async () => {
-      try {
-        if (!debouced.trim()) {
-          setSearchResults([]);
-          return;
-        }
-        setShowsLoading(true);
-        const response = await fetch(
-          `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouced)}&type=less`,
-        );
-        const { data } = await response.json();
-        setSearchResults(data);
-        console.log(data);
-        setShowsLoading(false);
-      } catch (error) {
-        console.log(error);
-        setShowsLoading(false);
-      }
-    })();
+    if (!debouced.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const fetchApi = async () => {
+      setShowsLoading(true);
+
+      const result = await searchService.search(debouced);
+      setSearchResults(result);
+
+      setShowsLoading(false);
+    };
+    fetchApi();
   }, [debouced]);
 
   return (

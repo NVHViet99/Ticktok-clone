@@ -49,7 +49,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const currentUser = true;
+  const currentUser = false;
   const userMenu = [
     {
       icon: <FontAwesomeIcon className={cx('icon')} icon={faUser} />,
@@ -128,7 +128,7 @@ function Header() {
                 fallback="https://s2.coinmarketcap.com/static/img/coins/64x64/2099.png"
               />
             ) : (
-              <button className={cx('btn-more')}>
+              <button className={cx('more-btn')}>
                 <FontAwesomeIcon icon={faEllipsisVertical} />
               </button>
             )}
