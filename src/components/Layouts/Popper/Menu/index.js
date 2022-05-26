@@ -50,7 +50,7 @@ function Menu({ children, items = [], hideOnClick = false, onchange = () => {} }
             {history.length > 1 && (
               <Header title="Languages" onBack={() => setHistory((pre) => pre.slice(0, pre.length - 1))} />
             )}
-            {rederItems()}
+            <div className={cx('menu-body')}> {rederItems()}</div>
           </PopperWrapper>
         </div>
       )}
