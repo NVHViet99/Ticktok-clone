@@ -30,6 +30,7 @@ const MENU_ITEMS = [
     icon: <FontAwesomeIcon className={cx('icon')} icon={faEarthAsia} />,
     title: 'English',
     children: {
+      title: 'Language',
       data: [
         {
           code: 'en',
@@ -52,6 +53,7 @@ const MENU_ITEMS = [
 
 function Header() {
   const currentUser = true;
+
   const userMenu = [
     {
       icon: <FontAwesomeIcon className={cx('icon')} icon={faUser} />,

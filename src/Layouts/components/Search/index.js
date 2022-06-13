@@ -10,6 +10,7 @@ import useDebouce from '~/hooks/useDebouce';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import styles from './Search.module.scss';
 import * as searchService from '~/api/searchServices';
+
 const cx = classNames.bind(styles);
 
 function Search() {
